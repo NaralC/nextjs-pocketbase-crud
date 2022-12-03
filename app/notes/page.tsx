@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import CreateNote from "./CreateNote";
 
 async function getNotes() {
   const response = await fetch(
@@ -19,6 +20,7 @@ export default async function HomePage() {
       {notes.map((note) => {
         return <Note key={note.id} note={note} />;
       })}
+      <CreateNote />
     </div>
   );
 }
